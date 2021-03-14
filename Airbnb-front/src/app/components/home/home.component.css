@@ -1,0 +1,58 @@
+section{
+    margin:2rem 0;
+}
+section#content{
+    background-image: url('/assets/images/1.webp');
+    height: 100vh;
+    margin-top: -5.5rem;
+    background-size: cover;
+    background-position: center;
+    padding: 1px;
+}
+section#content h1{
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-top: 10rem;
+    padding: 1rem;
+    font-size: 7rem;
+    line-height: 6rem;
+    color: snow;
+    margin-left: 3rem;
+}
+/* section content */
+section#content button{
+    background-color: snow;
+    margin-left: 4.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    border-color: transparent;
+}
+section#content button:hover{
+    border-color: black;
+    background-color: transparent;
+    color: snow;
+}
+div#city{
+    margin-bottom: 1rem;
+}
+/* section explore */
+section#explore{
+    background-color: #000;
+    color: snow;
+    padding: 1.5rem 0;
+}
+section#explore h2{
+    color: snow;
+    font-weight: bold;
+}
+/* section host */
+section#host h2{
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+

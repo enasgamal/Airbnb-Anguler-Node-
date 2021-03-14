@@ -1,0 +1,49 @@
+section#about{
+    background-image: url('/assets/images/21.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    margin-top: -1rem;
+    padding-top: 20px;
+}
+section#about .icon a{
+    color: #DE1E45;
+    font-size: 2rem;
+    font-weight: bold;
+}
+section#about .content{
+    text-align: center;
+    margin-top: 5rem;
+}
+section#about .content h2{
+    font-size: 4rem;
+    font-weight: bold;
+}
+section#about .content p{
+    font-size: 1.8rem;
+    /* padding: 0 20rem; */
+}
+div.content {
+    margin-top: 6rem;
+}
+section#places{
+    margin:3rem 0;
+}
+section#started,section#airbnb{
+    margin: 3rem 0;
+}
+section#started h2,section#airbnb h2{
+    font-weight: bold;
+    padding:2rem 4rem;
+}
+@media(max-width:768px){
+    section#about .content h2{
+        font-size: 3rem;
+    }
+    section#places,section#started,section#airbnb{
+        text-align: center;
+    }
+    section#started .content{
+        padding-bottom: 1rem ;
+    }
+}

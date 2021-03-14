@@ -1,0 +1,15 @@
+div.icon{
+    margin-bottom: 2rem;
+}
+div.icon span{
+    color: teal;
+    font-size: 2rem;
+}
+div.content{
+    padding: 0 2rem;
+}
+div.content h4{
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 1rem;
+}

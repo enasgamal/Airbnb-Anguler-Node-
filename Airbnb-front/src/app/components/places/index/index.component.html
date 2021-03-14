@@ -1,0 +1,58 @@
+<!-- <section id="places"class="search py-2">
+    <div class="container p-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 ">
+                <input #inputSearch class="form-control w-100" (keyup.enter)="inputSearch.value=''" [(ngModel)]="address" placeholder="search">
+                  <button class="btn" (click)="  onCityFilter()    ">search</button>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <select class="custom-select" [(ngModel)]="SortbyParam" >
+                            <option selected >Sort By:</option>
+                             <option value="address">city</option>
+                            <option value="totalPrice"> Price</option>
+                          </select>
+                     </div>
+                     <div class="col-md-6">
+                        <button type="button"class="btn text-center btn-pink" (click)="onSortDirection()">
+                            <i *ngIf="sortDirection==='asc'" class="fas fa-sort-up"> Sort Ascending</i> 
+                            <i *ngIf="sortDirection==='desc'"class="fas fa-sort-down">Sort Descending</i>
+                        </button>
+
+                     </div>
+                           
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<div class="container text-center" *ngIf="!isLoaded">
+    <div class="spinner-border text-dark mb-3" role="status" >
+    </div>
+    <h6>Loading........</h6>
+</div>
+<section id="places" *ngIf="approvedHosts.length>0 && isLoaded">
+    <div class="container">
+        <!-- <h2>Places to stay near you</h2> -->
+       <div class="content">
+        <div class="row mt-5">
+            <div class="col-lg-3 col-md-6 mb-4" *ngFor="let item of approvedHosts | paginate: {itemsPerPage :pageNumber, currentPage: currentPg}|filter:address:'address'|sort:[SortbyParam,sortDirection]">
+                <div class="card" >
+                   <div class="img" > 
+                       
+                       <img class="card-img-top" width="100%" src="http://localhost:7000/uploads/{{item.hostImage}} " alt="Card image"></div>
+                    <div class="card-body">
+                      <h6 class="card-title my-paragraph">{{item.propertyType}} -<span> {{item.address}}</span></h6>
+                      <p class="card-text">{{item.totalPrice}}$ / Night</p>
+                      <button [routerLink]="['/places/placeDetails',item.hostID]" routerLinkActive="router-link-active" class="details btn btn-primary">Details</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+       </div>
+       <div class="text-center py-5 paginate">
+        <pagination-controls (pageChange)="currentPg =$event"></pagination-controls>
+    </div>
+    </div>
+</section>

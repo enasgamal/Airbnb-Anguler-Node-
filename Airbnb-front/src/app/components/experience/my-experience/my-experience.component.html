@@ -1,0 +1,52 @@
+<section id="listing" class="pt-5">
+    <div class="container text-center" *ngIf="!isLoaded">
+        <div class="spinner-border text-dark mb-3" role="status" >
+        </div>
+        <h6>Loading........</h6>
+    </div>
+    <div class="container-fluid">
+
+        <div class="container" *ngIf="experiences[0]">
+            <div class="noListing text-center" *ngIf="experiences[0].length==0"  >
+                <h3 class=""  >No Experiences Found</h3>
+                   <div class="img mt-5" >
+                    <img src=" /assets/images/listing.PNG" alt="" width="100%"  class="mb-5">
+                   </div>
+                   <button class="btn exp mb-5" routerLink="/experience/addExperience">Start hosting your experience</button>
+               </div>
+        </div>
+        <div class="container mt-5" *ngIf="experiences[0] && isLoaded">
+            <h2 class="mb-5 text-center"  *ngIf="experiences[0].length>0">Your Experiences</h2>
+               <div class="row"  *ngIf="experiences[0].length>0">
+               <div class="col-lg-4 col-md-6 col-sm-12 mb-5" *ngFor="let currentIndex=index ; let item of experiences[0] | paginate: {itemsPerPage :pageNumber, currentPage: currentPg}">
+                <div class="card">
+                    <div class="img">
+                        <img class="card-img-top" src="http://localhost:7000/uploads/{{item.placeImage}}" width="100%"  alt="Card image cap" *ngIf="!isVisible">
+
+                    </div>
+                    <button type="button" class="btn change mt-2" [routerLink]="['/experience/uploadImage',item.experienceID]" routerLinkActive="router-link-active"   >Change</button>
+                    <div class="card-body">
+                      <h5 class="card-title"> <span class="mr-3"><i class="fas fa-map-marker-alt"></i></span> {{item.place}}</h5>
+                      <h5 class="card-title"><span class="mr-2"> <i class="fas fa-brain"></i></span> {{item.typeOfExperience}}</h5>
+                      <h5 class="card-title"><span class="mr-2"> <i class="fas fa-dollar-sign mr-2"></i></span> ${{item.totalPrice}}</h5>
+                      <h5 class="card-title"><span class="mr-2"> <i class="fas fa-users mr-1"></i></span>Up to {{item.capacity}} People</h5>
+                      <h5 class="card-title"><span class="mr-2"><i class="fas fa-hourglass-start mr-2"></i></span>{{item.startDate | date:'dd-MM-yyyy'}} </h5>
+                      <h5 class="card-title"><span class="mr-2"><i class="fas fa-hourglass-end mr-2"></i></span>{{item.endDate | date:'dd-MM-yyyy'}} </h5>
+                      <h5 class="card-title text-teal"><span class="mr-2"> <i class="fas fa-minus-circle"></i></span> {{item.experienceStatus}}</h5>
+
+                      
+                      <p class="card-title"><span class="mr-2"><i class="fas fa-clipboard"></i> </span> {{item.description |maxLength:50}} </p>
+                      <a  [routerLink]="['/experience/editExperience',item.experienceID]" routerLinkActive="router-link-active" class="btn btn-success px-4 mr-2">Edit</a>
+                       <button type="button" class="btn btn-danger px-3" (click)="deleteExperience(currentIndex)">Delete</button> 
+                       <a  [routerLink]="['/experience/clientsReservations',item.experienceID]" routerLinkActive="router-link-active" class="btn btnReserve mt-2 mr-2">Show Reservations</a>
+                     
+                    </div>
+                  </div>
+               </div>
+           </div>
+           <div class="text-center py-5 paginate" *ngIf="experiences[0].length>0">
+            <pagination-controls (pageChange)="currentPg =$event"></pagination-controls>
+        </div>
+       </div>
+    </div>
+</section>

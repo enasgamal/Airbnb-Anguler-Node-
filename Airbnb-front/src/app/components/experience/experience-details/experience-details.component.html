@@ -1,0 +1,88 @@
+<section id="details">
+    <div class="container text-center" *ngIf="!isLoaded">
+        <div class="spinner-border text-dark mb-3" role="status" >
+        </div>
+        <h6>Loading........</h6>
+    </div>
+    <div class="container-fluid">
+        <div class="container pt-4" *ngIf="experience.length>0 && isLoaded">
+            <h2>Experience Details</h2>
+            <div class="row mb-5">
+                <div class="card mb-3 event">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <div class="img">
+                                <img src="http://localhost:7000/uploads/{{experience[0].placeImage}}" class="card-img " alt="...">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">{{experience[0].typeOfExperience}} in {{experience[0].place}},
+                                    Hosted by <span>{{experience[0].hostName}}</span></h4>
+                                <div class="container-fluid ">
+                                    <p class="card-text text-muted text-justify ">{{experience[0].description  | maxLength:200}}</p>
+                                </div>
+                                <div class="content ">
+                                    <ul class="list-unstyled">
+                                        <li><span><i class="fas fa-users"></i></span> Up to {{experience[0].capacity}}
+                                            people</li>
+                                        <li><span><i class="fas fa-brain"></i></span>
+                                            {{experience[0].typeOfExperience}} </li>
+                                        <li><span><i class="fas fa-hand-holding-usd"></i></span> $
+                                            {{experience[0].totalPrice}} </li>
+                                        <li><span><i class="fas fa-hourglass-start"></i></span> {{experience[0].startDate | date:"dd-MM-yyyy"}}</li>
+                                        <li><span><i class="fas fa-hourglass-end"></i></span> {{experience[0].endDate | date:"dd-MM-yyyy"}}</li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<hr>
+<section id="reserve" class="py-4">
+    <div class="container" *ngIf="experience.length>0">
+        <div class="rules">
+            <h2>What you will do</h2>
+            <p class="card-text text-muted text-justify ">{{experience[0].description}}</p>
+        </div>
+    </div>
+</section>
+<hr>
+<section id="amenties" class="py-4">
+    <div class="container" *ngIf="experience.length>0">
+        <h2>Experience hosted by <span>{{experience[0].hostName}}</span></h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled ">
+                    <li class="my-3"><span><i class="fas fa-hot-tub "></i></span>Hosted in <span class="support">{{experience[0].language}}</span></li>
+                    <li ><span><i class="fas fa-sink"></i></span>Provide Meal : <span class="support">{{experience[0].catering}}</span></li>
+                </ul>
+            </div>
+            <div class="col-md-6 ">
+                <ul class="list-unstyled my-2">
+                    <li class="my-3"><span><i class="fas fa-sink"></i></span>Allow pets : <span class="support"> {{experience[0].pets}}</span></li>
+                    <li><span><i class="fas fa-wifi"></i></span>Support transportation : <span class="support"> {{experience[0].transportation}}</span></li>
+                </ul>
+            </div>
+        </div>
+         <div class="row">
+            <h4 class="mt-5 contact col-md-9">Contact host : <span>{{experience[0].hostEmail}}</span></h4>
+           <button type="button" [disabled]=IsDisabled class="reserve btn mt-5 col-md-3 mb-3" [routerLink]="['/experience/reserveExperience',experience[0].experienceID]" routerLinkActive="router-link-active">Join US</button>
+        </div>
+        <!-- <div><h5 *ngIf="IsVisible" class="col-md-3 ml-auto text-muted">This Experience is reserved by you <span>{{profileName}}</span></h5></div> -->
+
+        <div><h5 *ngIf="IsVisible" class="col-md-3 ml-auto text-muted">The Capacity is <span> full</span> </h5></div>
+        <div><h5 *ngIf="isReserved" class="col-md-3 ml-auto text-muted">This Experience is already reserved by you!</h5></div>
+        <div><h5 *ngIf="IsPosted" class="col-md-3 ml-auto text-muted">This Experience is already posted by you!</h5></div>
+
+    </div> 
+</section>

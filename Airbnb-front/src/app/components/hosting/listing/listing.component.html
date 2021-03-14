@@ -1,0 +1,53 @@
+<section id="listing" class="pt-5"  >
+    <div class="container text-center" *ngIf="!isLoaded">
+        <div class="spinner-border text-dark mb-3" role="status" >
+        </div>
+        <h6>Loading........</h6>
+    </div>
+    <div class="container-fluid">
+        <div class="container" *ngIf="hosts[0]">
+            <div class="noListing text-center"  *ngIf="hosts[0].length==0"  >
+                <h3 class="">No Places Found</h3>
+                   <div class="img mt-5" >
+                    <img src=" /assets/images/listing.PNG" alt="" width="100%" class="mb-5">
+                   </div>
+                   <button class="btn host mb-5" routerLink="/hosting">Start hosting your home</button>
+               </div>
+           </div>
+       <div class="container mt-5" *ngIf="hosts[0] && isLoaded">
+        <h2 class="mb-5 text-center" *ngIf="hosts[0].length>0">Your Places</h2>
+       
+           <div class="row" *ngIf="hosts.length>0">
+               <div class="col-lg-4 col-md-6 col-sm-12 mb-5"  *ngFor="let currentIndex=index; let item of hosts[0] | paginate: {itemsPerPage :pageNumber, currentPage: currentPg}; ">
+                <div class="card">
+                    <div class="img">
+                        <img class="card-img-top" src="http://localhost:7000/uploads/{{item.hostImage}}" width="100%" alt="Card image cap" *ngIf="!isVisible">
+                    </div>
+                    
+                    <button type="button" class="btn change mt-2" [routerLink]="['/hosting/uploadImage',item.hostID]" routerLinkActive="router-link-active"   >Change</button>
+                    <div class="card-body">
+                      <h5 class="card-title"> <span class="mr-3"><i class="fas fa-map-marker-alt"></i></span> {{item.address}}</h5>
+                      <h5 class="card-title"><span class="mr-2"> <i class="fas fa-home"></i></span> {{item.propertyType}}</h5>
+                      <h5 class="card-title"><span class="mr-2"><i class="fas fa-users"></i></span> {{item.numberOfGuests}} guests</h5>
+                      <h5 class="card-title"><span class="mr-2"><i class="fas fa-bed"></i></span> {{item.numberOfBedrooms}} bedroom</h5>
+                      <h5 class="card-title"><span class="mr-2"><i class="fas fa-bath"></i></span> {{item.numberOfBathrooms}} bathroom</h5>
+                      <h5 class="card-title"><span class="mr-3"><i class="fas fa-dollar-sign"></i></span>{{item.totalPrice}} $</h5>
+                      <h5 class="card-title"><span class="mr-2"><i class="fas fa-snowboarding"></i></span> {{item.activities}} </h5>
+                      <h5 class="card-title text-teal"><span class="mr-2"> <i class="fas fa-minus-circle"></i></span> {{item.hostStatus}}</h5>
+
+                      <p class="card-title"><span class="mr-2"><i class="fas fa-clipboard"></i> </span> {{item.description | maxLength:80}} </p>
+                      <a  [routerLink]="['/hosting/editListing',item.hostID]" routerLinkActive="router-link-active" class="btn btn-success px-4 mr-2">Edit</a>
+                      <button type="button" class="btn btn-danger px-3" (click)="deleteHost(currentIndex)">Delete</button>
+                      <a  [routerLink]="['/hosting/clientsReservations',item.hostID]" routerLinkActive="router-link-active" class="btn btnReserve mt-2 mr-2">Reservations</a>
+                      <a  [routerLink]="['/places/placeDetails',item.hostID]" routerLinkActive="router-link-active" class="btn btnReserve mt-2 mr-2">Reviews</a>
+
+                    </div>
+                  </div>
+               </div>
+           </div>
+           <div class="text-center py-5 paginate" *ngIf="hosts[0].length>0">
+            <pagination-controls (pageChange)="currentPg =$event"></pagination-controls>
+        </div>
+       </div>
+    </div>
+</section>

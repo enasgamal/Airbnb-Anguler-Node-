@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+.icon a{
+    color: #DE1E45;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+.my-paragraph
+{
+    white-space: nowrap;
+    width: 15em;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+

@@ -1,0 +1,42 @@
+<section id="trips" class="pt-5">
+    <div class="container text-center" *ngIf="!isLoaded">
+        <div class="spinner-border text-dark mb-3" role="status" >
+        </div>
+        <h6>Loading........</h6>
+    </div>
+    <div class="container-fluid">
+    
+        <div class="container" *ngIf="reservation[0]">
+            <div class="noListing text-center" *ngIf="reservation[0].length==0" >
+                <h3 class=""  >No Reserved Experiences Found</h3>
+                   <div class="img mt-5">
+                    <img src=" /assets/images/listing.PNG" alt="" width="100%"  class="mb-5">
+                   </div>
+                   <button class="btn exp mb-5" routerLink="/experience/allExperience">Reserve your Experience</button>
+               </div>
+           </div>
+       <div class="container mt-5" *ngIf="reservation[0] && isLoaded">
+        <h2 class="mb-5 text-center"  *ngIf="reservation[0].length>0">Your Reserved Experience</h2>
+           <div class="row"  *ngIf="reservation[0].length>0">
+               <div class="col-lg-4 col-md-6 col-sm-12 mb-5"  *ngFor="let currentIndex=index; let item of reservation[0] | paginate: {itemsPerPage :pageNumber, currentPage: currentPg}; ">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"> <span class="mr-3"><i class="fas fa-map-marker-alt"></i></span> {{item.experienceLocation}}</h5>
+                      <h5 class="card-title my-paragraph"><span class="mr-2"><i class="fas fa-brain"></i> </span> {{item.typeOfExperience}}</h5>
+
+                      <!-- <h5 class="card-title"><span class="mr-2"><i class="fas fa-moon"></i></span>{{item.experienceDuration}} </h5> -->
+                      <h5 class="card-title"><span class="mr-3"><i class="fas fa-dollar-sign mr-1"></i></span>{{item.experiencePrice}} $</h5>
+                      <p style="font-weight: bold;">For any inquires:</p>
+                      <h6 class="card-title teal">{{item.experienceHostEmail}}</h6>
+                      <button type="button" class="btn " (click)="delete(currentIndex)">Delete</button>
+                    </div>
+                  </div>
+               </div>
+           </div>
+           <div class="text-center py-5 paginate" *ngIf="reservation[0].length>0">
+            <pagination-controls (pageChange)="currentPg =$event"></pagination-controls>
+        </div>
+       </div>
+    </div>
+</section>
+

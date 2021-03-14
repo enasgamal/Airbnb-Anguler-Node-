@@ -1,0 +1,45 @@
+<section id="content">
+    <h1>go <br>near</h1>
+    <button class="btn" routerLink="/places">Explore new Places</button>
+</section>
+<section id="cities">
+   <div class="container">
+    <div class="row">
+        <div id="city" class="col-md-3"  *ngFor="let item of cities">
+            <app-cities [img]="item.img" [city]="item.h5" [time]=item.p [link]=item.link></app-cities>
+        </div>
+    </div>
+   </div>
+</section>
+<section id="live">
+    <div class="container">
+        <h2>Live anywhere</h2>
+        <div class="row">
+            <div id="place" class="col-md-4" *ngFor="let item of places">
+                <app-card [img]="item.img" [description]="item.desc" [router]="item.router"></app-card>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="explore">
+    <div class="container">
+        <h2>Experience the world</h2>
+        <p>Unique activities with local experts—in person or online.</p>
+       <div class="row">
+        <div class="col-md-4" *ngFor="let item of explore" >
+            <app-card [img]="item.img" [title]="item.title" [description]="item.desc" [router]=item.router></app-card>
+        </div>
+       </div>
+    </div>
+</section>
+<section id="host">
+    <div class="container">
+        <h2>Join millions of hosts on Airbnb</h2>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let item of host">
+                <app-card [img]="item.img" [description]="item.desc" [router]=item.router></app-card>
+            </div>
+        </div>
+    </div>
+</section>
+

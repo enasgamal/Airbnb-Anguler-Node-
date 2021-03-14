@@ -1,0 +1,43 @@
+<section id="reservation">
+  <div class="container text-center" *ngIf="!isLoaded">
+    <div class="spinner-border text-dark mb-3" role="status" >
+    </div>
+    <h6>Loading........</h6>
+  </div>
+    <div class="container mt-5" *ngIf="trips[0] && isLoaded">
+      <div class="noListing text-center" *ngIf="trips[0].length==0"  >
+        <h3 class="" >No Reserved Trips Found</h3>
+           <div class="img mt-5">
+            <img src=" /assets/images/listing.PNG" alt="" width="100%"  class="mb-5">
+           </div>
+           <button class="btn exp mb-5" routerLink="/hosting/listing" > Your Listing</button>
+       </div>
+    </div>
+    <div class="container mt-5 mb-5" *ngIf="trips[0]">
+        <h2 class="text-center mb-5 " *ngIf="trips[0].length>0"> Your Trips Reservation</h2>
+        <table class="table table-striped"*ngIf="trips[0].length>0" >
+            <thead>
+              <tr class="p-5">
+                <th scope="col">ID</th>
+                <th scope="col">Location</th>
+                <th scope="col">Client Name</th>
+                <th scope="col">Client Email</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of trips[0] ; let currentIndex=index;">
+                <th scope="row">{{currentIndex+1}}</th>
+                <td>{{item.tripLocation}}</td>
+                <td>{{item.clientName}}</td>
+                <td>{{item.clientEmail}}</td>
+                <td>{{item.startDate| date : 'dd-MM-yyyy'}}</td>
+                <td>{{item.endDate| date : 'dd-MM-yyyy'}}</td>
+                </tr>
+             
+            </tbody>
+          </table>
+    </div>
+</section>
+

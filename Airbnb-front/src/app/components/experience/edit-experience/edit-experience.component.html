@@ -1,0 +1,208 @@
+<section id="experience">
+    <div class="container text-center" *ngIf="!isLoaded">
+        <div class="spinner-border text-dark mb-3" role="status" >
+        </div>
+        <h6>Loading........</h6>
+    </div>
+    <div class="container-fluid">
+        <div class="container ">
+            <div class="row ">   
+                <div class="col-lg-7 p-5 m-auto">
+                    <div id="form"  *ngIf="isLoaded" >
+                        <div class="container " *ngIf="form">
+                            <h4>Edit your experience</h4>
+                            <form [formGroup]="form" >
+                                <div class="form-group">
+                                    <label for="place">
+                                        <h5>place :</h5>
+                                    </label>
+                                    <select class="form-control" id="exampleFormControlSelect1" formControlName="place">
+                                        <option>Dahab</option>
+                                        <option>Sharm el-shekih</option>
+                                        <option>Hurghada</option>
+                                        <option>Alex</option>
+                                        <option>Matrouh</option>
+                                        <option>North coast</option>
+                                        <option>Ras Sedr</option>
+                                        <option>El-Alamein</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="typeOfExperience">
+                                        <h5>Type of Experinece :</h5>
+                                    </label>
+                                    <select class="form-control" id="typeOfExperience"
+                                        formControlName="typeOfExperience">
+                                        <option>Food</option>
+                                        <option>Society and Culture</option>
+                                        <option>Sports</option>
+                                        <option>Literature</option>
+                                        <option>Animals</option>
+                                        <option>Art and Design</option>
+                                        <option>Entertainment</option>
+
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="totalPrice"><h5>Total Price:</h5></label>
+                                    <input formControlName="totalPrice"  type="text" id="totalPrice" class="form-control"   placeholder="Enter total price">
+                                    <div *ngIf="form.controls['totalPrice'].invalid && (form.controls['totalPrice'].touched || form.controls['totalPrice'].dirty)">
+                                      <small  class="form-text text-danger" *ngIf="form.controls['totalPrice'].hasError('required')" >Required field</small>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="capacity"><h5>Capacity:</h5></label>
+                                    <input formControlName="capacity"  type="text" id="capacity" class="form-control"   placeholder="Enter Capacity">
+                                    <div *ngIf="form.controls['capacity'].invalid && (form.controls['capacity'].touched || form.controls['capacity'].dirty)">
+                                      <small  class="form-text text-danger" *ngIf="form.controls['capacity'].hasError('required')" >Required field</small>
+                                    </div>
+                                  </div>
+                                  <!-- <div class="form-group">
+                                    <label for="duration"><h5>Duration:</h5></label>
+                                    <input formControlName="duration"  type="text" id="duration" class="form-control"   placeholder="Enter Duration">
+                                    <div *ngIf="form.controls['duration'].invalid && (form.controls['duration'].touched || form.controls['duration'].dirty)">
+                                      <small  class="form-text text-danger" *ngIf="form.controls['duration'].hasError('required')" >Required field</small>
+                                    </div>
+                                  </div> -->
+                                  <!-- <div class="form-group">
+                                    <mat-form-field>
+                                        <mat-date-range-input [rangePicker]="picker" [dateFilter]="unavailableDays">
+                                      <input matStartDate  placeholder="Start date"  formControlName="startDate">
+                                      <input matEndDate   placeholder="End date" formControlName="endDate">
+                                        </mat-date-range-input>
+                                      </mat-form-field>
+                                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    
+                                      <mat-date-range-picker #picker></mat-date-range-picker>
+                    
+                                  </div> -->
+                                  <div class="row">
+                                    <div class="col-xs-12 col-12 col-sm-6 col-md-6 form-group ">
+                                        <label for="date"><h5>Start Date:</h5></label>
+                                        <input 
+                                        class="form-control"
+                                        type="text" 
+                                        placeholder="Enter Start Date" 
+                                        bsDatepicker 
+                                        placement="bottom" 
+                                        [bsConfig]="{isAnimated: true, adaptivePosition: true,dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-default'}"
+                                        (bsValueChange)="onValueChange1($event)"
+                                        formControlName="startDate"
+                                        [minDate]="minDate"
+                                        >
+                                      </div>
+                                    <div class="col-xs-12 col-12 col-sm-6 col-md-6 form-group ">
+                                        <label for="date"><h5>End Date:</h5></label>
+                                        <input 
+                                        class="form-control"
+                                        type="text" 
+                                        placeholder="Enter End Date" 
+                                        bsDatepicker 
+                                        placement="bottom" 
+                                        [bsConfig]="{isAnimated: true, adaptivePosition: true,dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-default'}"
+                                        (bsValueChange)="onValueChange2($event)"
+                                        formControlName="endDate"
+                                        [minDate]="minDate"
+                                        >
+                                      </div>
+                                  </div>
+                                <div class="form-group">
+                                    <div class="row justify-content-between">
+                                        <div class="col-xl-4">
+                                            <label for="exampleInputEmail1">
+                                                <h5 class="mr-5"> Language: </h5>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-3 ">
+                                             <input formControlName="language" value="Arabic" type="radio"
+                                                class="m-2">Arabic
+                                        </div>
+                                        <div class="col-xl-5">
+                                            <input formControlName="language" value="English" type="radio"
+                                            class="m-2">English
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <label for="exampleInputEmail1">
+                                                <h5 class="mr-5"> Catering:</h5>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-3">
+                                            <input formControlName="catering" value="Yes" type="radio" class="m-2">Yes
+                                        </div>
+                                        <div class="col-xl-5">
+                                            <input formControlName="catering" value="No" type="radio" class="m-2">No
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <label for="exampleInputEmail1">
+                                                <h5 class="mr-5"> Pets:  </h5>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-3">
+                                            <input formControlName="pets" value="Yes" type="radio" class="m-2">Yes
+                                        </div>
+                                        <div class="col-xl-5">
+                                            <input formControlName="pets" value="No" type="radio" class="m-2">No
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <label for="exampleInputEmail1">
+                                                <h5 class="mr-5">Transportation:</h5>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-3">
+                                            <input formControlName="transportation" value="Yes" type="radio" class="m-2">Yes
+                                        </div>
+                                        <div class="col-xl-5">
+                                            <input formControlName="transportation" value="No" type="radio" class="m-2">No
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="description">
+                                        <h5>Description :</h5>
+                                    </label>
+                                    <textarea formControlName="description" type="text" class="form-control" rows="4"
+                                        placeholder="Tell us more about your Experience"></textarea>
+                                    <div
+                                        *ngIf="form.controls['description'].invalid && (form.controls['description'].touched || form.controls['description'].dirty)">
+                                        <small class="form-text text-danger"
+                                            *ngIf="form.controls['description'].hasError('required')">required </small>
+                                    </div>
+                                </div>
+
+                                <button  type="submit" class="btn" 
+                                    (click)="editExperience()">Edit Experience!</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+

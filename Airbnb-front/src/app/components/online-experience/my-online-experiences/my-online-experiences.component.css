@@ -1,0 +1,101 @@
+section#listing{
+    background-color:#F8EDE3 ;
+    /* height: 200vh; */
+    margin-top: -1rem;
+    padding-bottom: 5rem;
+}
+.paginate{
+    color: #444;
+    font-weight: bold;
+    font-size: large;
+}
+section#listing .icon a{
+    color: #DE1E45;
+    font-size: 2rem;
+    font-weight: bold;  
+}
+section#listing h2{
+    font-weight: bold;
+    font-size: 3rem;
+    color: #444;
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid #aaa;
+}
+div.card{
+    padding: 2rem;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px #aaa,-10px 10px 10px -10px #aaa;
+}
+div.card h5.card-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #aaa;
+}
+div.card .card-title span{
+    color: teal;
+    /* margin-right: 1.5rem; */
+    display: inline-block;
+    font-size: 1.1rem;
+
+}
+h3.noListing{
+    margin-bottom: 10rem;
+}
+button.change,button.upload,button.exp{
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    color: snow;
+    background-color: #DE1E45;
+    border-color: transparent;
+}
+button.change:hover,button.exp:hover{
+    background-color: transparent;
+    border-color: #DE1E45;
+    color: #DE1E45;
+}
+button.upload:hover{
+    background-color: transparent;
+    border-color:#DE1E45;
+    color: #DE1E45;
+}
+
+.text-teal
+{
+    color:#DE1E45;
+}
+
+.my-paragraph
+{
+    white-space: nowrap;
+    width: 10em;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+/* 
+img{
+    display: inline-block;
+    max-width: 100%;
+    margin-top: -20px;
+
+}
+.img{
+    max-width: 500px;
+    height: 200px;
+    overflow: hidden;
+} */
+.btnReserve
+{
+   background-color: teal; 
+   color: snow;
+}
+.noListing h3{
+    color: #444;
+    font-weight: bold;
+}

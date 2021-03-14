@@ -1,0 +1,151 @@
+<section id="hosting" class="pt-5">
+    <div class="container-fluid">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 earn">
+                    <h3>Earn up to <span>$321</span> a month hosting your home</h3>
+                </div>
+                <div class="col-lg-7">
+                    <div id="form" *ngIf="!isVisible">
+                        <div class="container">
+                            <h4>Tell us more about your place and we'll update your estimate</h4>
+                            <form [formGroup]="form">
+                                <div class="form-group">
+                                  <label for="address"><h5>Address :</h5></label>
+                                  <select class="form-control" id="exampleFormControlSelect1" formControlName="address">
+                                    <option>Dahab</option>
+                                    <option>Sharm el-shekih</option>
+                                    <option>Hurghada</option>
+                                    <option>Alex</option>
+                                    <option>Matrouh</option>
+                                    <option>North coast</option>
+                                    <option>Ras Sedr</option>
+                                    <option>El-Alamein</option>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1"><h5>Property Type :</h5></label>
+                                    <select class="form-control" id="exampleFormControlSelect1" formControlName="propertyType">
+                                      <option>Apartment</option>
+                                      <option>Villa</option>
+                                      <option>Cabines and Cottage</option>
+                                      <option>Unique Stays</option>
+                                    </select>
+                                  </div>
+                                <div class="form-group">
+                                  <label for="numberOfGuests"><h5>Number of guests:</h5></label>
+                                  <input formControlName="numberOfGuests" type="text" class="form-control"   placeholder="Enter numberOfGuests">
+                                  <div *ngIf="form.controls['numberOfGuests'].invalid && (form.controls['numberOfGuests'].touched || form.controls['numberOfGuests'].dirty)">
+                                    <small  class="form-text text-danger" *ngIf="form.controls['numberOfGuests'].hasError('required')" >Required field</small>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numberOfBedrooms1"><h5>Number of Bedrooms:</h5></label>
+                                    <input formControlName="numberOfBedrooms" type="text" class="form-control" id="exampleInputnumberOfBedrooms1" placeholder="Enter numberOfBedrooms">
+                                    <div *ngIf="form.controls['numberOfBedrooms'].invalid && (form.controls['numberOfBedrooms'].touched || form.controls['numberOfBedrooms'].dirty)">
+                                      <small class="form-text text-danger" *ngIf="form.controls['numberOfBedrooms'].hasError('required')">required numberOfBedrooms</small>
+                                  </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputnumberOfGuests1"><h5>Number Of Bathrooms :</h5></label>
+                                    <input formControlName="numberOfBathrooms"  type="text" class="form-control"   placeholder="Enter number Of Bathrooms ">
+                                    <div *ngIf="form.controls['numberOfBathrooms'].invalid && (form.controls['numberOfBathrooms'].touched || form.controls['numberOfBathrooms'].dirty)">
+                                      <small  class="form-text text-danger" *ngIf="form.controls['numberOfBathrooms'].hasError('required')" >Required field</small>
+                                      <!-- <small  class="form-text text-danger" *ngIf="form.controls['numberOfBathrooms'].hasError('minlength')" >min length is 6</small>
+                                      <small  class="form-text text-danger" *ngIf="form.controls['numberOfBathrooms'].hasError('maxlength')" >max length is 13</small> -->
+                                    </div>
+                                  </div>
+                                <div class="form-group">
+                                  <label for="totalPrice"><h5>Price Per Night:</h5></label>
+                                  <input formControlName="totalPrice"  type="text" id="totalPrice" class="form-control"   placeholder="Enter total price">
+                                  <div *ngIf="form.controls['totalPrice'].invalid && (form.controls['totalPrice'].touched || form.controls['totalPrice'].dirty)">
+                                    <small  class="form-text text-danger" *ngIf="form.controls['totalPrice'].hasError('required')" >Required field</small>
+                                  </div>
+                                </div>
+                               
+                               
+                                <div class="form-group">
+                                  <label for="description"><h5>Description :</h5></label>
+                                  <textarea formControlName="description"  type="text"  class="form-control" rows="4" placeholder="Tell us more about your place" ></textarea>
+                                  <div *ngIf="form.controls['description'].invalid && (form.controls['description'].touched || form.controls['description'].dirty)">
+                                    <small class="form-text text-danger" *ngIf="form.controls['description'].hasError('required')">required </small>
+                                    <small class="form-text text-danger" *ngIf="form.controls['description'].hasError('minlength')">min length must be 30 </small>
+                                </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                  <label for="description"><h5>Activities :</h5></label>
+                                 <select class="form-control py-4" id="exampleFormControlSelect1" formControlName="activities" multiple size="1">
+                                    <option>Gym</option>
+                                    <option>Beachfront</option>
+                                    <option>Hot tup</option>
+                                    <option>Pool</option>
+                                  </select>
+                                </div>
+                                <button [disabled]="form.invalid" type="submit" class="btn" (click)="addHost()">Next!</button>
+                                </form>
+                            </div>
+                    </div> 
+                    <div id="imgForm" *ngIf="isVisible">
+                      <div class="container">
+                        <form [formGroup]="form">
+                            <div class="form-group">
+                                <label for="photo" ><h4>Upload your photo:</h4></label>
+                               <div class="row justify-content-around">
+                                <input formControlName="hostImage" type="file"  class="form-control col-lg-10 col-sm-12" (change)="selectImage($event)" >
+                                <!-- <button  type="button" class="btn btn-success">upload</button> -->
+                               </div>
+                              </div>
+                        </form>
+                        <button type="submit" class="btn text-muted" (click)="start()">Start Hosting!</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="aboutHosting" class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12" *ngFor="let item of about">
+                <app-card [title]=item.h4 [description]=item.p></app-card>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="HostingSteps">
+    <div class="container">
+        <h2>Hosting in 3 steps</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-12" *ngFor="let item of steps">
+                <app-card [icon]=item.icon [title]="item.h4" [description]="item.p"></app-card>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="HostingWorks">
+    <div class="container">
+        <h2>How hosting works</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-6" *ngFor="let item of works">
+                <app-image-card [img]=item.img [title]="item.h4" [description]="item.p"></app-image-card>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="safety">
+    <div class="container">
+        <h2 class="mb-5">Safety is our priority</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-12" *ngFor="let item of safety">
+                <app-card  [icon]=item.icon [title]="item.h4" [description]="item.p"></app-card>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="readyToHosting">
+    <div class="container">
+        
+    </div>
+</section>

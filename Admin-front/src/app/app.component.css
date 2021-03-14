@@ -1,0 +1,26 @@
+nav
+{
+    background-color: teal;
+}
+.navbar-light .navbar-nav .nav-link{
+    color:snow;
+    font-size: 1.2rem;
+}
+.navbar-brand
+{
+    color:snow;
+    font-size: 2.3rem;
+    font-weight: bolder;
+}
+
+
+.dropdown-menu{
+    left: -90% !important;
+}
+div.dropdown-menu{
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}

@@ -1,0 +1,10 @@
+.width-swiper
+{
+    width: 55%;
+}
+.progress-bar{
+    background-color: #28a745 !important;
+}
+.pending{
+    background-color: rgb(185, 5, 5) !important;
+}

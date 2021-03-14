@@ -1,0 +1,40 @@
+<section id="city">
+    <div class="container text-center" *ngIf="!isLoaded">
+        <div class="spinner-border text-dark mb-3" role="status" >
+        </div>
+        <h6>Loading........</h6>
+    </div>
+    <div class="container" *ngIf="propertyTypes && isLoaded">
+        <div class="noListing text-center" *ngIf="propertyTypes.length==0" >
+            <h3 class=""  >No Places Found</h3>
+               <div class="img mt-5">
+                <img src=" /assets/images/listing.PNG" alt="" width="100%"  class="mb-5">
+               </div>
+               <button class="btn city mb-5" routerLink="/places">Explore more places</button>
+           </div>
+       </div>
+    <div class="container mt-3 pt-3" *ngIf="propertyTypes && isLoaded">
+        <h2 class="text-center" *ngIf="propertyTypes.length>0" >{{propertyType}}</h2>
+       <div class="content" *ngIf="propertyTypes.length>0">
+        <div class="row mt-5">
+            <div class="col-lg-3 col-md-6 mb-4" *ngFor="let item of propertyTypes | paginate: {itemsPerPage :pageNumber, currentPage: currentPg}">
+                <div class="card" >
+                    <div class="img">
+                        <div class="img"> <img class="card-img-top" width="100%" src="http://localhost:7000/uploads/{{item.hostImage}} " alt="Card image"></div>
+
+
+                    </div>
+                    <div class="card-body">
+                      <h6 class="card-title my-paragraph"><span> {{item.address}}</span></h6>
+                      <p class="card-text">{{item.totalPrice}}$ / {{item.numberOfNights}} nights</p>
+                      <button [routerLink]="['/places/placeDetails',item.hostID]" routerLinkActive="router-link-active" class="details btn btn-primary">Details</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+       </div>
+       <div class="text-center py-5 paginate" *ngIf="propertyTypes.length>0">
+        <pagination-controls (pageChange)="currentPg =$event"></pagination-controls>
+    </div>
+    </div>
+</section>

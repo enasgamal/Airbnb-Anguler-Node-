@@ -1,0 +1,42 @@
+h1
+{
+    color: #444;
+    font-weight: bold;
+    
+}
+table{
+    box-shadow: 5px 5px 5px 5px rgb(204, 202, 202) ;
+   
+    
+}
+th{
+    font-size: 1.15rem;
+    color: #444;
+    padding: 20px;
+}
+tr,td{
+    padding: 20px;
+    font-weight: bold;
+    color: rgb(129, 127, 127);
+}
+.noListing h3{
+    color: #444;
+    font-weight: bold;
+}
+button.exp{
+    background-color: #DE1E45;
+    color: snow;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+button.exp:hover{
+    background-color: transparent;
+    color: #DE1E45;
+    border-color: #DE1E45;
+}

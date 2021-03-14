@@ -1,0 +1,42 @@
+<section id="about">
+    <div class="container-fluid">
+       
+        <div class="content">
+            <h2>Get to know Airbnb</h2>
+            <p class="col-md-12 px-5">Welcome to the Airbnb travel community. <br>
+                Wherever you go, we have a place for you.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="places">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-12" *ngFor="let item of places">
+                <app-place [img]=item.img [title]=item.h2 [description]=item.p></app-place>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<section id="started">
+    <div class="container-fluid">
+        <h2>Simple steps to get started</h2>
+        <div class="row pr-5 pl-5">
+            <div class="col-md-3 col-sm-12 content" *ngFor="let item of steps">
+                <app-card [img]=item.img [title]=item.h4 [description]=item.p ></app-card>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<section id="airbnb">
+        <div class="container-fluid">
+            <h2>What makes Airbnb different</h2>
+            <div class="row pr-5 pl-5">
+                <div class="col-md-3" *ngFor="let item of airbnb">
+                    <app-card [icon]=item.icon [title]=item.h4 [description]=item.p ></app-card>
+                </div>
+            </div>
+        </div>
+</section>

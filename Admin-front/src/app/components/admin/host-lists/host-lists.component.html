@@ -1,0 +1,33 @@
+<div class="container p-4">
+  <h2 class="p-5 text-center">Hosts List</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Host Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Property Type</th>
+      <th scope="col"># Bedrooms</th>
+      <!-- <th scope="col"># Nights</th> -->
+      <th scope="col">Total Price</th>
+      <th scope="col">Approved Status</th>
+      <th scope="col">Decline Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of hosts[0] ; let currentIndex=index;">
+    <tr [ngClass]="{'approved': item.hostStatus==Approved, 'decline':item.hostStatus==Declined }">
+      <th scope="row">{{currentIndex+1}}</th>
+      <td>{{item.hostName}}</td>
+      <td>{{item.address}}</td>
+      <td>{{item.propertyType}}</td>
+      <td>{{item.numberOfBedrooms}}</td>
+      <!-- <td>{{item.numberOfNights}}</td> -->
+      <td>{{item.totalPrice}}</td>
+      <td><button type="button" class="btn btn-info" (click)="approve(currentIndex) ">Approve</button></td>
+      <td><button type="button" class="btn btn-danger" (click)="decline(currentIndex)">Decline</button></td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
+</div>

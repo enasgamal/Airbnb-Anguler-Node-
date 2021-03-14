@@ -1,0 +1,7 @@
+.approved{
+    background-color: #8cd98c !important;
+}
+.decline{
+    background-color: #ff9999 !important;
+    text-decoration: line-through;
+}

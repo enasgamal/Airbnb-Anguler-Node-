@@ -1,0 +1,16 @@
+<section id="upload">
+    
+    <div class="container mb-5">
+       <div id="form" class="col-md-8 m-auto">
+        <form [formGroup]="form">
+            <div class="form-group">
+                <label for="photo" ><h4>Upload a picture of your place:</h4></label>
+               <div class="row justify-content-around">
+                <input formControlName="placeImage" type="file"  class="form-control col-lg-10 col-sm-12" (change)="selectImage($event)" >
+                <button  type="button" class="btn mt-2 upload" (click)="start()">upload</button>
+               </div>
+              </div>
+        </form>
+       </div>
+    </div>
+</section>

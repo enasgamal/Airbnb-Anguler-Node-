@@ -1,0 +1,118 @@
+section#details .icon a{
+    color: #DE1E45;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+.card{
+    /* border: 1px solid #000; */
+    /* padding: 2rem; */
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-color: #aaa;
+    box-shadow: 5px 5px 5px 5px #aaa,-10px 10px 10px -10px #aaa;
+    overflow: hidden;
+}
+h2{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+.card-body h4{
+    font-size: 1.7rem;
+    
+}
+.card-body h4 span{
+    color: #DE1E45;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+ul li span{
+    margin-right: 1.2rem;
+    color: teal;
+    font-size: 1.5rem !important;
+}
+section#reserve .rules ul p{
+    margin-left: 3rem;
+}
+section#reserve span.name{
+    color: #DE1E45;
+}
+button.reserve{
+    color: snow;
+    background-color: #DE1E45;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem ;
+    letter-spacing: 2px;
+    border: 1px solid transparent;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+button.reserve:hover{
+    border-color: #DE1E45;
+    color: #DE1E45;
+    background-color: snow;
+}
+
+ span.support
+{
+    color:#DE1E45  !important;
+    font-size: 1.3rem !important;
+}
+
+h4.contact{
+    font-weight: bold;
+}
+h4.contact span{
+    color: #DE1E45;
+}
+/* img{
+    
+ 
+        display: inline-block;
+        max-width: 100%;
+        margin-top: -20px;
+    
+    }
+    .img{
+        max-width: 500px;
+        height: 150px;
+        overflow: hidden;
+    } */
+h5 span{
+    color: #DE1E45;
+}
+
+
+/* 
+.my-paragraph
+{
+    white-space: normal;
+    width: 500em;
+    overflow: hidden;
+    text-overflow:ellipsis;
+
+    text-overflow: ellipsis;
+    line-clamp: 4;
+   display: -webkit-box;
+   -webkit-line-clamp: 4; /* number of lines to show */
+   /* -webkit-box-orient: vertical;
+   overflow: hidden;
+
+} */

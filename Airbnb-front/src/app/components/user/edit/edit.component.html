@@ -1,0 +1,78 @@
+<section>
+  <div class="container text-center" *ngIf="!isLoaded">
+    <div class="spinner-border text-dark mb-3" role="status" >
+    </div>
+    <h6>Loading........</h6>
+  </div>
+    <div class="container-fluid" *ngIf="form">
+        <div class="row justify-content-around">
+            <div id="form" class="col-md-6" *ngIf="isLoaded">
+                <div class="container">
+                    <h2>Edit your profile</h2>
+                    <form [formGroup]="form">
+                        <div class="form-group">
+                          <label for="firstName"><h4>First Name:</h4></label>
+                          <input formControlName="firstName" type="text" class="form-control" id="firstName"  placeholder="Enter FirstName">
+                          <div *ngIf="form.controls['firstName'].invalid && (form.controls['firstName'].touched || form.controls['firstName'].dirty)">
+                            <small  class="form-text text-danger" *ngIf="form.controls['firstName'].hasError('required')" >Required field</small>
+                            <!-- <small  class="form-text text-danger" *ngIf="form.controls['FirstName'].hasError('minlength')" >minimum length 3</small>
+                            <small  class="form-text text-danger" *ngIf="form.controls['FirstName'].hasError('maxlength')" >max length 10</small> -->
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1"><h4>Last Name:</h4></label>
+                          <input formControlName="lastName" type="text" class="form-control"   placeholder="Enter LastName">
+                          <div *ngIf="form.controls['lastName'].invalid && (form.controls['lastName'].touched || form.controls['lastName'].dirty)">
+                            <small  class="form-text text-danger" *ngIf="form.controls['lastName'].hasError('required')" >Required field</small>
+                            <!-- <small  class="form-text text-danger" *ngIf="form.controls['LastName'].hasError('minlength')" >minimum length 3</small>
+                            <small  class="form-text text-danger" *ngIf="form.controls['LastName'].hasError('maxlength')" >max length 10</small> -->
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1"><h4>Email:</h4></label>
+                          <input formControlName="email" type="email" class="form-control"   placeholder="Enter Email">
+                          <div *ngIf="form.controls['email'].invalid && (form.controls['email'].touched || form.controls['email'].dirty)">
+                            <small  class="form-text text-danger" *ngIf="form.controls['email'].hasError('required')" >Required field</small>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1"><h4>Password:</h4></label>
+                            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <div *ngIf="form.controls['password'].invalid && (form.controls['password'].touched || form.controls['password'].dirty)">
+                              <small class="form-text text-danger" *ngIf="form.controls['password'].hasError('required')">required password</small>
+                          </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1"><h4>Mobile Number:</h4></label>
+                            <input formControlName="mobile"  type="number" class="form-control"   placeholder="Enter Mobile number">
+                            <div *ngIf="form.controls['mobile'].invalid && (form.controls['mobile'].touched || form.controls['Mobile'].dirty)">
+                              <small  class="form-text text-danger" *ngIf="form.controls['mobile'].hasError('required')" >Required field</small>
+                              <small  class="form-text text-danger" *ngIf="form.controls['mobile'].hasError('minlength')" >min length is 12</small>
+                              <small  class="form-text text-danger" *ngIf="form.controls['mobile'].hasError('maxlength')" >max length is 13</small>
+                            </div>
+                          </div>
+                        <div class="form-group">
+                          <label for="Age"><h4>Age:</h4></label>
+                          <input formControlName="age"  type="number" id="Age" class="form-control"   placeholder="Enter Age">
+                          <div *ngIf="form.controls['age'].invalid && (form.controls['age'].touched || form.controls['age'].dirty)">
+                            <small  class="form-text text-danger" *ngIf="form.controls['age'].hasError('required')" >Required field</small>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1"><h4 class="mr-5">Gender </h4></label>
+                          <input formControlName="gender"  value="female" type="radio" class="mr-2" >Female
+                          <input formControlName="gender"  value="male" type="radio" class="mr-2">Male
+                          <!-- <div *ngIf="form.controls['Gender'].invalid && (form.controls['Gender'].touched || form.controls['Gender'].dirty)">
+                            <small class="form-text text-danger" *ngIf="form.controls['Email'].hasError('required')">required email</small>
+                        </div> -->
+                        </div>
+                        <button [disabled]="form.invalid" type="submit" class="btn " (click)="updateUser()" >Update</button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

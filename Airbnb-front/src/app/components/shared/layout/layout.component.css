@@ -1,0 +1,31 @@
+body{
+    box-sizing: border-box;
+}
+.dropdown-menu{
+    left: -120% !important;
+}
+nav.navbar .navbar-brand .icon{
+    margin-right: 10px;
+    font-size: 2.5rem;
+    color: snow;
+}
+nav.navbar .navbar-brand .logo{
+    font-size: 2rem;
+    color: snow;
+    font-weight: bold;
+}
+nav.navbar .navbar-nav .nav-item .nav-link{
+    color: black;
+    margin-right: 3rem;
+    color: snow;
+    font-weight: bold;
+    
+}
+div.dropdown-menu{
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+

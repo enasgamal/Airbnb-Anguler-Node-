@@ -1,0 +1,73 @@
+/* .lastsection{
+    background-color:#f7f7f7 ;
+    padding-top:  50px;
+    position: inherit;
+    padding-bottom: 0px;
+    bottom:0;
+    width:100%;
+}
+.lastsection .container{
+    overflow: hidden;
+}
+
+.lastsection .container a{
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #DE1E45;
+    font-weight:500;
+    font-size: larger;
+
+}
+.lastsection .container .goto a:hover{
+    color: rgb(133, 115, 115) ;
+} */
+.footer{
+    background-color: #f7f7f7 ;
+    overflow: auto;
+}
+.footer .container{
+    margin: 50px;
+}
+.footer .container ul{
+    list-style: none; 
+
+    display: flex; 
+
+    justify-content: center; 
+
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+.footer .container ul li{
+    padding: 5px;
+}
+.footer .container ul i{
+    color: #DE1E45;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    padding: 0px 5px;
+}
+.footer .container ul i:hover{
+    color: rgb(133, 115, 115) ;
+}
+.footer .container p{
+    text-align: center; 
+    color: black;
+    font-size: bold;
+}
+.footer .container a{
+    text-decoration: none;
+    color: #DE1E45;
+    display: inline;
+}
+
+.footer .container a:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,70 @@
+<section id="details">
+    <div class="container text-center" *ngIf="!isLoaded">
+        <div class="spinner-border text-dark mb-3" role="status" >
+        </div>
+        <h6>Loading........</h6>
+    </div>
+    <div class="container-fluid">
+        <div class="container pt-4" *ngIf="onlineExperience.length>0 && isLoaded">
+            <h2>Online Experience Details</h2>
+            <div class="row mb-5">
+                <div class="card mb-3 event">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <div class="img">
+                                <img src="http://localhost:7000/uploads/{{onlineExperience[0].onlineExperienceImage}}"  class="card-img " alt="...">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Online Experience about {{onlineExperience[0].onlineExperienceType}},
+                                    Hosted by <span>{{onlineExperience[0].hostName}}</span></h4>
+                                <div class="container-fluid ">
+                                    <p class="card-text text-muted text-justify ">{{onlineExperience[0].onlineExperienceDescription  | maxLength:120}}</p>
+                                </div>
+                                <div class="content ">
+                                    <ul class="list-unstyled">
+                                        <li><span><i class="fas fa-brain"></i></span>
+                                            {{onlineExperience[0].onlineExperienceType}} </li>
+                                        <li><span><i class="fas fa-calendar-day"></i></span> {{onlineExperience[0].onlineExperienceDate | date:"dd-MM-yyyy"}}</li>
+                                        <li><span><i class="fas fa-hourglass-start"></i></span>{{onlineExperience[0].startTime | date:' hh:mm a'}}</li>
+                                        <li><span><i class="fas fa-hourglass-end"></i></span>{{onlineExperience[0].endTime | date:' hh:mm a'}}</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<hr>
+<section id="reserve" class="py-4">
+    <div class="container" *ngIf="onlineExperience.length>0">
+        <div class="rules">
+            <h2>What you will do</h2>
+            <p class="card-text text-muted text-justify ">
+                {{onlineExperience[0].onlineExperienceDescription }}
+            </p>
+            <h2 class="mt-5 d-inline-block">Join Us on time :</h2>
+            <a  href={{onlineExperience[0].onlineExperienceLink}} target ="_blank" class="card-text text-justify d-inline-block ml-2 font1 " style="cursor: pointer;">{{onlineExperience[0].onlineExperienceLink}}</a>
+        </div>
+    </div>
+</section>
+<hr>
+<section id="amenties" class="py-4">
+    <div class="container" *ngIf="onlineExperience.length>0">
+        <div class="row">
+            <h4 class="mt-5 contact col-md-9">Contact host : <span>{{onlineExperience[0].hostEmail}}</span></h4>
+           <button type="button" (click)="confirm()" [disabled]=IsDisabled class="reserve btn mt-5 col-md-3 mb-3" >Interested In</button>
+        </div>
+        <div><h5 *ngIf="IsPosted" class="col-md-3 ml-auto text-muted">This online experience is posted by you!</h5></div>
+        <div><h5 *ngIf="IsInterested" class="col-md-3 ml-auto text-muted">You are already interested in it!</h5></div>
+
+    </div> 
+</section>

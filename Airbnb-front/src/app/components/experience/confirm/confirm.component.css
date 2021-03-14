@@ -1,0 +1,39 @@
+section#confirm{
+    background-color: #F8EDE3;
+    height: 70vh;
+    margin-top: -5rem;
+}
+h3{
+    font-size: 3rem;
+}
+h3 span{
+    color:#DE1E45;
+}
+h5{
+    line-height: 2rem;
+}
+.content{
+    padding-top: 4rem;
+    text-align: center;
+    margin-top: 5rem;
+}
+button{
+    background-color: #DE1E45;
+    color: snow;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+button:hover{
+    background-color: transparent;
+    border-color: #DE1E45;
+    color: #DE1E45;
+
+}

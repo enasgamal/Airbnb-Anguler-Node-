@@ -1,0 +1,41 @@
+<section id="host">
+    <div class="container-fluid">
+        <div class="content">
+            <h6>airbnb experiences</h6>
+            <h2>Host an online experience</h2>
+            <p>Join a community of hosts bringing <br>the world together in a whole new way.</p>
+            <button class="btn" routerLink="/experience/addExperience">Get started</button>
+        </div>
+    </div>
+</section>
+<section id="pics">
+
+</section>
+<section id="airbnbExp">
+    <div class="container-fluid">
+        <p>Airbnb Experiences are engaging activities<br> designed by
+             locals that go beyond the typical tour or class. <br>
+            And now you can host them for anyone, from anywhere.
+        </p>
+        <div class="row  pr-5 pl-5 mb-3">
+            <div class="col-md-4" *ngFor="let item of host">
+                <app-card [icon]=item.icon [title]=item.h4 [description]=item.p></app-card>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="works">
+    <div class="container-fluid">
+        <div class="content">
+            <h2>How hosts are sharing their world</h2>
+            <p>These hosts bring the spirit of experiences to the screen with 
+                unique small group activities to do together while we're apart.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let item of works">
+                <app-card [img]=item.img [title]=item.h4 [description]=item.p></app-card>
+            </div>
+        </div>
+    </div>
+</section>

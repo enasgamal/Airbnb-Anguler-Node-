@@ -1,0 +1,32 @@
+<div class="container p-4">
+    <h2 class="p-5 text-center">Online Experiences List</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Host Name</th>
+        <th scope="col">Experience Type</th>
+        <th scope="col">Date</th>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Approved Status</th>
+        <th scope="col">Decline Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of experiences[0] ; let currentIndex=index;">
+      <tr [ngClass]="{'approved': item.onlineExperienceStatus==Approved, 'decline':item.onlineExperienceStatus==Declined }">
+        <th scope="row" >{{currentIndex+1}}</th>
+        <td>{{item.hostName}}</td>
+        <td>{{item.onlineExperienceType}}</td>
+        <td>{{item.onlineExperienceDate | date:"dd-MM-YYYY"}}</td>
+        <td>{{item.startTime | date:"HH:mm"}}</td>
+        <td>{{item.endTime | date:"HH:mm" }}</td>
+       
+        <td><button type="button" class="btn btn-info" (click)="approve(item) " >Approve</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="decline(item)">Decline</button></td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+  </div>

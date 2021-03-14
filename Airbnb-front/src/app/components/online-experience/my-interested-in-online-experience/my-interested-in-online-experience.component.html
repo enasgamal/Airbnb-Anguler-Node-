@@ -1,0 +1,43 @@
+<section id="trips" class="pt-5">
+    <div class="container text-center" *ngIf="!isLoaded">
+        <div class="spinner-border text-dark mb-3" role="status" >
+        </div>
+        <h6>Loading........</h6>
+    </div>
+    <div class="container-fluid">
+    
+        <div class="container" *ngIf="interestedIn[0]">
+            <div class="noListing text-center" *ngIf="interestedIn[0].length==0" >
+                <h3 class=""  >No Interests Found</h3>
+                   <div class="img mt-5">
+                    <img src=" /assets/images/listing.PNG" alt="" width="100%"  class="mb-5">
+                   </div>
+                   <button class="btn exp mb-5" routerLink="/online-experience/allOnlineExperience">Join Online Experiences</button>
+               </div>
+           </div>
+       <div class="container mt-5" *ngIf="interestedIn[0] && isLoaded">
+        <h2 class="mb-5 text-center"  *ngIf="interestedIn[0].length>0">Your Interests</h2>
+           <div class="row"  *ngIf="interestedIn[0].length>0">
+               <div class="col-lg-4 col-md-6 col-sm-12 mb-5"  *ngFor="let currentIndex=index; let item of interestedIn[0] | paginate: {itemsPerPage :pageNumber, currentPage: currentPg}; ">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><span class="mr-2"> <i class="fas fa-brain"></i></span> {{item.onlineExperienceType}}</h5>
+                        <h5 class="card-title"><span class="mr-3"><i class="fas fa-calendar-day"></i></span>{{item.onlineExperienceDate | date:'dd-MM-yyyy'}} </h5>
+                        <h5 class="card-title"><span class="mr-3"><i class="fas fa-hourglass-start"></i></span>{{item.onlineExperienceStartTime | date:' hh:mm:ss a'}} </h5>
+                        <h5 class="card-title"><span class="mr-3"><i class="fas fa-hourglass-end"></i></span>{{item.onlineExperienceEndTime | date:' hh:mm:ss a'}} </h5>
+                        <a href={{item.onlineExperienceLink}} target="_blank" class="card-title"><span class="mr-3"><i class="fas fa-link"></i></span>{{item.onlineExperienceLink | maxLength:20}} </a>
+                        <p style="font-weight: bold;">For any inquires:</p>
+                      <h6 class="card-title teal"> {{item.onlineExperienceHostEmail}}</h6>
+                    
+                      <button type="button" class="btn " (click)="delete(currentIndex)">Delete</button>
+                    </div>
+                  </div>
+               </div>
+           </div>
+           <div class="text-center py-5 paginate" *ngIf="interestedIn[0].length>0">
+            <pagination-controls (pageChange)="currentPg =$event"></pagination-controls>
+        </div>
+       </div>
+    </div>
+</section>
+

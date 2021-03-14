@@ -1,0 +1,42 @@
+
+div#form{
+    border: 1px solid #000;
+    padding: 2rem;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px #aaa;
+    border-color: #aaa;
+}
+div#form h2{
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #aaaa;
+}
+form{
+    padding-top: 2rem;
+}
+button{
+    background-color: teal;
+    color: snow;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-color: transparent;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+button:hover{
+    background-color: #fff;
+    border-color:teal ;
+    color:teal ;
+}
+

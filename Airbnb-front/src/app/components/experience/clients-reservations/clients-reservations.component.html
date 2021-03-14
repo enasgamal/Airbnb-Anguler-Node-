@@ -1,0 +1,41 @@
+<section id="reservation">
+  <div class="container text-center" *ngIf="!isLoaded">
+    <div class="spinner-border text-dark mb-3" role="status" >
+    </div>
+    <h6>Loading........</h6>
+  </div>
+    <div class="container mt-5" *ngIf="reservation[0] && isLoaded">
+      <div class="noListing text-center" *ngIf="reservation[0].length==0"  >
+        <h3 class="" >No Reserved Experiences Found</h3>
+           <div class="img mt-5">
+            <img src=" /assets/images/listing.PNG" alt="" width="100%"  class="mb-5">
+           </div>
+           <button class="btn exp mb-5" routerLink="/experience/myExperience" > Your Experiences</button>
+       </div>
+    </div>
+    <div class="container mt-5 mb-5" *ngIf="reservation[0]" >
+        <h1 class="text-center mb-5 " *ngIf="reservation[0].length>0" > Your Experience Reservation</h1>
+        <table class="table table-striped"*ngIf="reservation[0].length>0"  >
+            <thead>
+              <tr class="p-5">
+                <th scope="col">ID</th>
+                <th scope="col">Location</th>
+                <th scope="col">Type of experience</th>
+                <th scope="col">Client Name</th>
+                <th scope="col">Client Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of reservation[0] ; let currentIndex=index;">
+                <th scope="row">{{currentIndex+1}}</th>
+                <td>{{item.experienceLocation}}</td>
+                <td>{{item.typeOfExperience}}</td>
+                <td>{{item.clientName}}</td>
+                <td>{{item.clientEmail}}</td>
+                </tr>
+             
+            </tbody>
+          </table>
+    </div>
+</section>
+

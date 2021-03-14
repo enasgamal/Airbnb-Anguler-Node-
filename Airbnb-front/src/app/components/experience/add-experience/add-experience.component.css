@@ -1,0 +1,126 @@
+section#experience{
+    background-color:#F8EDE3 ;
+    padding-bottom:3rem ;
+    margin-top: -1rem;
+}
+section#experience .earn{
+    margin-top: 12rem;
+}
+section#experience .earn h3{
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+section#experience .earn h3 span{
+    color: #DE1E45;
+}
+div#form, div#imgForm{
+    border: 1px solid #000;
+    padding: 2rem;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-color: #aaa;
+    box-shadow: 5px 5px 5px 5px #aaa,-10px 10px 10px -10px #aaa;
+    background-color: snow;
+}
+div#form h4{
+    /* text-align: center; */
+    padding: 1rem 0;
+    border-bottom: 1px solid #aaaa;
+}
+form{
+    padding-top: 2rem;
+    
+}
+
+button[type="submit"]{
+    background-color: #DE1E45;
+    color: snow;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-color: transparent;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+button[type="button"]{
+    background-color: #DE1E45;
+    color: snow;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    
+}
+button:hover{
+    background-color: #fff;
+    border-color:#DE1E45 ;
+    color:#DE1E45 ;
+}
+section#contact .submit
+{
+    margin:3rem;
+
+}
+
+section#contact .submit h4
+{
+    font-size:2rem;
+    font-weight: bold;
+    color:#444
+    
+}
+
+section#contact .submit p
+{
+    font-size:1.5rem;
+    
+}
+
+section#explore
+{
+  background-image:url("/assets/images/exp1.jpg");
+  height:100vh;
+  background-size: cover;
+    
+}
+
+section#explore h2
+{
+line-height: 1.375em !important;
+ font-size: 4rem;
+ font-weight: bold;
+ margin-top: 4rem;
+    
+}
+
+button.go
+{
+    background-color: snow;
+    border:1px transparent solid;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color:#444;
+    font-size: 1.5 rem;
+    padding:1.3 rem;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+
+}
+
+button.go:hover{
+    background-color: transparent;
+    border-color:snow ;
+    color:snow ;
+}
+

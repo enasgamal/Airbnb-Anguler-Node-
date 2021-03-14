@@ -1,0 +1,124 @@
+<section id="experience">
+
+    <div class="container text-center" *ngIf="!isLoaded">
+        <div class="spinner-border text-dark mb-3" role="status" >
+        </div>
+        <h6>Loading........</h6>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container ">
+            <div class="row ">   
+                <div class="col-lg-7 p-5 m-auto">
+                    <div id="form"  *ngIf="isLoaded" >
+                        <div class="container " *ngIf="form">
+                            <h4>Edit your online experience</h4>
+                            <form [formGroup]="form">
+
+                                <!--Type-->
+                                <div class="form-group">
+                                    <label for="onlineExperienceType"><h5>Type of Online Experinece :</h5></label>
+                                    <select class="form-control" id="onlineExperienceType"
+                                        formControlName="onlineExperienceType">
+                                        <option>Food</option>
+                                        <option>Society and Culture</option>
+                                        <option>Sports</option>
+                                        <option>Literature</option>
+                                        <option>Animals</option>
+                                        <option>Art and Design</option>
+                                        <option>Entertainment</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <!--Description-->
+                                <div class="form-group">
+                                    <label for="onlineExperienceDescription">
+                                        <h5>Description :</h5>
+                                    </label>
+                                    <textarea formControlName="onlineExperienceDescription" type="text" class="form-control" rows="4"
+                                        placeholder="Tell us more about your online Experience"></textarea>
+                                    <div
+                                        *ngIf="form.controls['onlineExperienceDescription'].invalid && (form.controls['onlineExperienceDescription'].touched || form.controls['onlineExperienceDescription'].dirty)">
+                                        <small class="form-text text-danger"
+                                            *ngIf="form.controls['onlineExperienceDescription'].hasError('required')">required </small>
+                                    </div>
+                                </div>
+
+                                <!--Link-->
+                                <div class="form-group">
+                                    <label for="onlineExperienceLink">
+                                        <h5>Link :</h5>
+                                    </label>
+                                    <textarea formControlName="onlineExperienceLink" type="text" class="form-control" rows="2"
+                                        placeholder="Post here the link of your online Experience"></textarea>
+                                    <div
+                                        *ngIf="form.controls['onlineExperienceLink'].invalid && (form.controls['onlineExperienceLink'].touched || form.controls['onlineExperienceLink'].dirty)">
+                                        <small class="form-text text-danger"
+                                            *ngIf="form.controls['onlineExperienceLink'].hasError('required')">required </small>
+                                    </div>
+                                </div>
+
+                                <!--Date-->
+                                <div class="form-group ">
+                                    <label for="onlineExperienceDate"><h5>Date:</h5></label>
+                                    <input 
+                                    class="form-control"
+                                    type="text" 
+                                    placeholder="Enter the Date of your online Experience" 
+                                    bsDatepicker 
+                                    placement="bottom" 
+                                    [bsConfig]="{isAnimated: true, adaptivePosition: true,dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-default'}"
+                                    formControlName="onlineExperienceDate"
+                                    [minDate]="minDate"
+                                    >
+                                </div>
+
+                                <div class="row">
+                                    <!--start Time-->
+                                    <div class="form-group col-md-6">
+                                    <label for="startTime">
+                                        <h5>startTime :</h5>
+                                    </label>
+                                    <timepicker [(ngModel)]="myTime1" [showMeridian]="isMeridian" (isValid)="isValid1($event)" formControlName="startTime"></timepicker>
+                                    <div *ngIf="!valid1" class="alert alert-danger">Invalid time</div>
+                                    </div>
+
+                                    <!--end Time-->
+                                    <div class="form-group col-md-6">
+                                    <label for="endTime">
+                                        <h5>endTime :</h5>
+                                    </label>
+                                    <timepicker [(ngModel)]="myTime2" [showMeridian]="isMeridian" (isValid)="isValid2($event)" formControlName="endTime"></timepicker>
+                                    <div *ngIf="!valid2" class="alert alert-danger">Invalid time</div>
+                                    </div>
+                                </div>
+                                
+
+                                <!--Language-->
+                                <div class="form-group">
+                                    <div class="row justify-content-between">
+                                        <div class="col-xl-4">
+                                            <label for="onlineExperienceLanguage"><h5 class="mr-5"> Language: </h5></label>
+                                        </div>
+                                        <div class="col-xl-3 ">
+                                             <input formControlName="onlineExperienceLanguage" value="Arabic" type="radio" class="m-2">Arabic
+                                        </div>
+                                        <div class="col-xl-5">
+                                            <input formControlName="onlineExperienceLanguage" value="English" type="radio" class="m-2">English
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button  type="submit" class="btn" (click)="editOnlineExperience()">Edit Online Experience!</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>

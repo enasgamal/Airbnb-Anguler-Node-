@@ -1,0 +1,150 @@
+<div class="row width-swiper m-auto ">
+  <div class="container mt-5">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="../../../../assets/img/1282f009-f405-4cc9-b280-7c39ff671f7a.jpg"
+            alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="../../../../assets/img/185cebca-d168-4740-bc6e-30eeb2dfcc0b.jpg"
+            alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="../../../../assets/img/79197f72-a1e4-4ea2-9b3a-92745694722c.jpg"
+            alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="text-center mt-5">Dashboard</h2>
+  <div class="row py-5 m-auto ">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="d-flex align-items-center" >
+                <div>
+                  <i class="fas fa-landmark text-success"></i>
+                  <span class="text-muted font-weight-bold">&nbsp; Places</span>
+                </div>
+                <div class="ml-auto">
+                  <h2 class="counter text-success">{{places.length}}</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <h6>Approved {{approvedHosts.length}}</h6>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" [attr.aria-valuenow]="places.length" aria-valuemin="0" aria-valuemax ="places.length" 
+                  style="min-width: 0em;" [style.width]="(approvedHosts.length/places.length)*100 + '%'">
+                   
+                  </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <h6 class="mt-3">Pending {{places.length-approvedHosts.length}}</h6>
+              <div class="progress ">
+                <div class="progress-bar pending progress-bar-success progress-bar-striped" role="progressbar" [attr.aria-valuenow]="places.length" aria-valuemin="0" aria-valuemax ="places.length" 
+                style="min-width: 0em;" [style.width]="((places.length-approvedHosts.length)/places.length)*100 + '%'">
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="d-flex align-items-center">
+                <div>
+                  <i class="fas fa-globe-europe text-success"></i>
+                  <span class="text-muted font-weight-bold">&nbsp; Experiences</span>
+                </div>
+                <div class="ml-auto">
+                  <h2 class="counter text-success">{{experiences.length}}</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <h6>Approved {{approvedExperiences.length}}</h6>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" [attr.aria-valuenow]="experiencesNumbers" aria-valuemin="0" aria-valuemax ="experiences.length" 
+                  style="min-width: 0em;" [style.width]="(approvedExperiences.length/experiences.length)*100 + '%'">
+                   
+                  </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <h6 class="mt-3">Pending {{experiences.length-approvedExperiences.length}}</h6>
+              <div class="progress ">
+                <div class="progress-bar pending progress-bar-success progress-bar-striped" role="progressbar" [attr.aria-valuenow]="experiencesNumbers" aria-valuemin="0" aria-valuemax ="experiences.length" 
+                style="min-width: 0em;" [style.width]="((experiences.length-approvedExperiences.length)/experiences.length)*100 + '%'">
+                </div>
+            </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="d-flex align-items-center">
+                <div>
+                  <i class="fas fa-mountain text-success"></i>
+                  <span class="text-muted font-weight-bold">&nbsp; Online Experience</span>
+                </div>
+                <div class="ml-auto">
+                  <h2 class="counter text-success">{{onlineExperience.length}}</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <h6>Approved {{approvedOnlineExperiences.length}}</h6>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" [attr.aria-valuenow]="onlineExperience.length" aria-valuemin="0" aria-valuemax ="onlineExperience.length" 
+                  style="min-width: 0em;" [style.width]="(approvedOnlineExperiences.length/onlineExperience.length)*100 + '%'">
+                   
+                  </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <h6 class="mt-3 ">Pending {{onlineExperience.length-approvedOnlineExperiences.length}}</h6>
+              <div class="progress ">
+                <div class="progress-bar pending progress-bar-success progress-bar-striped" role="progressbar" [attr.aria-valuenow]="onlineExperience.length" aria-valuemin="0" aria-valuemax ="onlineExperience.length" 
+                style="min-width: 0em;" [style.width]="((onlineExperience.length-approvedOnlineExperiences.length)/onlineExperience.length)*100 + '%'">
+                </div>
+            </div>
+            </div>
+            
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+section#trips{
+    background-color:#F8EDE3 ;
+    /* height: 200vh; */
+    margin-top: -1rem;
+    padding-bottom: 5rem;
+}
+.paginate{
+    color: #444;
+    font-weight: bold;
+    font-size: large;
+}
+
+section#trips h2{
+    font-weight: bold;
+    font-size: 3rem;
+    color: #444;
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid #aaa;
+}
+.teal{color: teal;}
+div.card{
+    padding: 2rem;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px #aaa,-10px 10px 10px -10px #aaa;
+}
+div.card h5.card-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #aaa;
+}
+div.card .card-title span{
+    color: teal;
+    /* margin-right: 1.5rem; */
+    display: inline-block;
+    font-size: 1.1rem;
+
+}
+button{
+    background-color: #DE1E45;
+    color: snow;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+button:hover{
+    background-color: transparent;
+    color: #DE1E45;
+    border-color: #DE1E45;
+}
+
+.noListing h3{
+    color: #444;
+    font-weight: bold;
+}
+
